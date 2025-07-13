@@ -1,0 +1,318 @@
+
+/* Estilos generales 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+} */
+
+/* Reset de márgenes y padding para toda la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que los padding y border no afecten el tamaño de los elementos */
+}
+
+
+
+/* Fondo con patrón geométrico */
+body {
+    background-color: #a3b6fa;
+    background-image: 
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px), 
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px, 40px 40px, 20px 20px, 20px 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-position: 0 0, 0 20px, 20px 0, 0px 20px;
+}
+
+
+
+/* Limita el ancho del contenido */
+main {
+    max-width: 1200px; /* Ajusta el valor según lo que quieras */
+    margin: 0 auto; /* Centramos el contenido */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo del header */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+
+
+/* Estilo general de la barra de navegación */
+nav {
+    background-color: #333333ea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar la barra */
+    transition: background-color 0.3s ease;
+   
+    border-radius: 0px 0px 20px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* Color llamativo al hacer hover */
+}
+
+nav ul li a.active {
+    color: #ffcc00; /* Color de la sección activa */
+}
+
+/* Indicador visual debajo del enlace activo */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #ffcc00;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+
+
+
+
+/* Ocultar la lista de navegación por defecto en móviles */
+.nav-list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Estilos de la barra en pantallas grandes */
+.nav-list li {
+    margin: 0 20px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #ffcc00;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.authors {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.author {
+    text-align: center;
+}
+
+.author img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* Estilo de secciones */
+section {
+    background-color: #ffffffd3;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para estética */
+
+
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Agregar un espaciado mayor para pantallas más grandes */
+@media (min-width: 1200px) {
+    body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    main {
+        padding: 40px;
+    }
+}
+
+/* Optimizar el contenido para pantallas pequeñas */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Para que el menú se apile verticalmente en pantallas pequeñas */
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Estilos responsivos para pantallas móviles 
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+}
+*/
+
+
+
+
+
+
+
+
+/* Estilos para pantallas móviles */
+@media (max-width: 768px) {
+    /* Mostrar el botón hamburguesa en pantallas pequeñas */
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Esconder la lista de navegación hasta que el menú hamburguesa sea activado */
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    /* Mostrar la lista cuando esté activa */
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-list li a {
+        font-size: 1rem;
+        padding: 15px;
+        width: 100%;
+        display: block;
+    }
+}
