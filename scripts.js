@@ -14,29 +14,36 @@ const ctx = document.getElementById('graficoResistencia').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Sin aditivo', 'Aditivo A', 'Aditivo B', 'Aditivo C'],
+        labels: ['(Compresión) Tipo 1', '(Compresión) Tipo 2', '(Flexo Tracción) Tipo 1', '(Flexo Tracción) Tipo 2'],
         datasets: [{
-            label: 'Resistencia del concreto (MPa)',
-            data: [25, 30, 32, 28],
+            label: 'Resistencia del concreto a la Compresión y a la Flexo Tracción MR (MPa)',
+            data: [1.36, 0.51, 1.76, 0.82],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)'
+                'rgba(235, 54, 54, 0.2)',
+                'rgba(235, 54, 54, 0.2)',
+                'rgba(255, 247, 0, 0.46)',
+                'rgba(255, 247, 0, 0.46)'
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
+                'rgb(24, 0, 204)',
+                'rgb(5, 156, 0)',
+                'rgb(24, 0, 204)',
+                'rgb(5, 156, 0)'
             ],
-            borderWidth: 1
+
+            borderWidth: 3
         }]
     },
     options: {
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                max: 5,
+                title: {
+                display: true,
+                text: 'Resistencia (MPa)'
+                }
+                
             }
         }
     }
@@ -51,18 +58,86 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     });
 });
 
-// Validación del formulario de contacto
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+
+
+
+
+
+
+
+
+
+
+// Gráfica de Absorción
+const ctx1 = document.getElementById('absorcionChart').getContext('2d');
+const myChart1 = new Chart(ctx1, {
+type: 'bar',
+data: {
+    labels: ['Adoquin Tipo 1', 'Adoquin Tipo 2'],
+    datasets: [{
+    label: '% de Absorción',
+    data: [6, 11],
+    backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(62, 214, 59, 0.2)'],
+    borderColor: ['rgb(24, 0, 204)', 'rgb(5, 156, 0)'],
+    borderWidth: 1
+    }]
+},
+options: {
+    responsive: true,
+    scales: {
+    y: {
+        beginAtZero: true,
+        max: 15,
+        title: {
+        display: true,
+        text: 'Porcentaje (%)'
+        }
+    }
+    },
+    plugins: {
+    title: {
+        display: true,
+        text: 'Comparación de Porcentaje de Absorción'
+    }
+    }
+}
 });
 
 
 
 
-
-
-
-
-
-
+  // Gráfica de Infiltración
+  const ctx2 = document.getElementById('infiltracionChart').getContext('2d');
+  new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['Adoquin Tipo 1', 'Adoquin Tipo 2'],
+      datasets: [{
+        label: 'Infiltración (cm/s)',
+        data: [2.43, 2.45],
+        backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(62, 214, 59, 0.2)'],
+        borderColor: ['rgb(24, 0, 204)', 'rgb(5, 156, 0)'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: false,
+          min: 0,
+          max: 3,
+          title: {
+            display: true,
+            text: 'cm/s'
+          }
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'Comparación de Infiltración'
+        }
+      }
+    }
+  });

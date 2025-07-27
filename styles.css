@@ -17,6 +17,10 @@ body {
 
 
 
+section#metodologia ul {
+  margin-left: 30px;
+}
+
 /* Fondo con patrón geométrico */
 body {
     background-color: #a3b6fa;
@@ -204,7 +208,8 @@ section {
     margin-left: auto;
     margin-right: auto;
     max-width: 1100px;
-    padding: 40px;
+    padding: 60px 90px 60px 90px;
+
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para estética */
 
@@ -213,7 +218,7 @@ section {
 
 section h2 {
     font-size: 1.8rem;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 footer {
@@ -316,3 +321,48 @@ footer {
         display: block;
     }
 }
+
+
+
+
+.graficos-doble {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Para que se acomoden en móviles */
+  margin-top: 2rem;
+}
+
+.grafico-item {
+  flex: 1 1 400px; /* mínimo 400px, crece si hay espacio */
+  max-width: 500px;
+}
+
+#tipo1 {
+    color: blue;
+}
+
+#tipo2 {
+    color: green;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.galeria-grid img {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.galeria-grid img:hover  {
+    scale: 1.05;
+}
+
