@@ -166,14 +166,19 @@ nav ul li a.active::after {
 
 
 .authors {
-    display: flex;
-    justify-content: space-around;
+    
     margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    gap: 1rem;
+    text-align: center;
 }
 
 .author {
     text-align: center;
 }
+
+
 
 .author img {
     width: 150px;
@@ -366,3 +371,16 @@ footer {
     scale: 1.05;
 }
 
+
+
+
+
+
+@media (max-width: 768px) {
+    /* Mostrar el botón hamburguesa en pantallas pequeñas */
+    .author p{
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+}
